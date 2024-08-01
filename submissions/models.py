@@ -372,7 +372,7 @@ class Score(models.Model):
     """
     student_item = models.ForeignKey(StudentItem, on_delete=models.CASCADE)
     submission = models.ForeignKey(Submission, null=True, on_delete=models.CASCADE)
-    points_earned = models.PositiveIntegerField(default=0)
+    points_earned = models.FloatField(default=0)
     points_possible = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(editable=False, default=now, db_index=True)
 
