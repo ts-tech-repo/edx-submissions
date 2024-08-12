@@ -1011,6 +1011,9 @@ def _get_or_create_student_item(student_item_dict):
         logger.exception(error_message)
         raise SubmissionInternalError(error_message) from error
 
+def remove_submission(uuid):
+    return Submission.objects.filter(uuid=uuid).delete()
+
 
 def _use_read_replica(queryset):
     """
